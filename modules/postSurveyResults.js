@@ -6,7 +6,7 @@ const { update } = require("./SurveyModel");
 const verifyUser = require("../auth");
 const Survey = require("./SurveyModel");
 
-async function handlePostSurveyResults(req, res) {
+async function postSurveyResults(req, res) {
     const formID = req.body.surveyID;
     if (formID === process.env.JOTFORM_TEMPLATE) {
     console.log("Can Not Delete Template");
@@ -35,4 +35,4 @@ async function handlePostSurveyResults(req, res) {
     }
 }
 
-module.exports = handlePostSurveyResults;
+module.exports = postSurveyResults;

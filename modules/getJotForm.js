@@ -2,7 +2,7 @@
 
 const axios = require('axios');
 
-async function handleGetJotFormSurvey(request, response) {
+async function getJotForm(request, response) {
     const apiKey = process.env.JOTFORM_API;
     const formID = request.query.surveyid;
     const url = `https://api.jotform.com/form/${formID}/submissions?apiKey=${apiKey}`;
@@ -47,4 +47,4 @@ async function handleGetJotFormSurvey(request, response) {
     }
 }
 
-module.exports = handleGetJotFormSurvey;
+module.exports = getJotForm
