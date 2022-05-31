@@ -9,13 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const handleGetSurveyResults = require('./modules/getSurveyResults');
-const handlePostSurveyResults = require('./modules/postSurveyResults');
-const handleDeleteSurveyResults = require('./modules/deleteSurveyResults');
-const handleGetUser = require('./modules/getUser');
-const handleGetJotFormSurvey = require('./modules/getJotForm');
-const handleCloneJotFormSurvey = require('./modules/cloneJotForm');
-const handleGetActiveSurvey = require('./modules/getActiveSurvey');
+const getSurveyResults = require('./modules/getSurveyResults');
+const postSurveyResults = require('./modules/postSurveyResults');
+const deleteSurveyResults = require('./modules/deleteSurveyResults');
+const getUser = require('./modules/getUser');
+const getJotForm = require('./modules/getJotForm');
+const cloneJotForm = require('./modules/cloneJotForm');
+const getActiveSurvey = require('./modules/getActiveSurvey');
 
 const PORT = process.env.PORT || 3001;
 
@@ -29,12 +29,12 @@ db.once("open", function () {
 app.get("/test", (req, res) => {
   response.send("test request received");
 });
-app.get("/survey", handleGetSurveyResults);
-app.post("/survey", handlePostSurveyResults);
-app.delete("/survey/:id", handleDeleteSurveyResults);
-app.get("/user", handleGetUser);
-app.get("/jotform", handleGetJotFormSurvey);
-app.post("/jotform", handleCloneJotFormSurvey);
-app.get('/active', handleGetActiveSurvey);
+app.get("/survey", getSurveyResults);
+app.post("/survey", postSurveyResults);
+app.delete("/survey/:id", deleteSurveyResults);
+app.get("/user", getUser);
+app.get("/jotform", getJotForm);
+app.post("/jotform", cloneJotForm);
+app.get('/active', getActiveSurvey);
 
 app.listen(PORT, () => console.log("server is listening to port ", PORT));
