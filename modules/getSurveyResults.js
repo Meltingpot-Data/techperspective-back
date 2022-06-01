@@ -3,7 +3,7 @@
 const verifyUser = require('../auth');
 const Survey = require("./SurveyModel");
 
-async function handleGetSurveyResults(req, res) {
+async function getSurveyResults(req, res) {
     verifyUser(req, async (err, user) => {
     if (err) {
         console.error(err);
@@ -29,4 +29,4 @@ async function handleGetSurveyResults(req, res) {
     });
 }
 
-module.exports = handleGetSurveyResults;
+module.exports = getSurveyResults;

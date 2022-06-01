@@ -3,7 +3,7 @@
 const axios = require('axios');
 const Survey = require('./SurveyModel');
 
-async function handleCloneJotFormSurvey(request, response) {
+async function cloneJotFormSurvey(request, response) {
     try {
         const templateFormID = 213535497610053; //ryan's form
         const url = `https://api.jotform.com/form/${templateFormID}/clone?apiKey=${process.env.JOTFORM_API}`;
@@ -26,4 +26,4 @@ async function handleCloneJotFormSurvey(request, response) {
     }
 }
 
-module.exports = handleCloneJotFormSurvey;
+module.exports = cloneJotFormSurvey;

@@ -2,7 +2,7 @@
 
 const verifyUser = require('../auth');
 
-function handleGetUser(req, res, callbackFn) {
+function getUser(req, res, callbackFn) {
     verifyUser(req, (err, user) => {
         if (err) {
             res.send("Invalid Token");
@@ -12,4 +12,4 @@ function handleGetUser(req, res, callbackFn) {
     });
 }
 
-module.exports = handleGetUser;
+module.exports = getUser;
