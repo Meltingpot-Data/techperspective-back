@@ -3,7 +3,7 @@
 const verifyUser = require('../auth');
 const Survey = require("./SurveyModel");
 
-async function handleDeleteSurveyResults(req, res) {
+async function deleteSurveyResults(req, res) {
     const { id } = req.params;
     const { email } = req.query;
     verifyUser(req, async (err, user) => {
@@ -26,4 +26,4 @@ async function handleDeleteSurveyResults(req, res) {
     });
 }
 
-module.exports = handleDeleteSurveyResults;
+module.exports = deleteSurveyResults;
