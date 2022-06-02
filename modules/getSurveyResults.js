@@ -1,5 +1,6 @@
 "use strict";
 
+// RETRIEVES RESULTS FROM MONGO
 const verifyUser = require('../auth');
 const Survey = require("./SurveyModel");
 
