@@ -7,7 +7,7 @@ async function getActiveSurvey(req, res) {
         const activeSurvey = await Survey.find({ active: true });
 
         res.send(activeSurvey)
-    } catch(err) {
+    } catch (err) {
         console.log(err)
     }
 }
