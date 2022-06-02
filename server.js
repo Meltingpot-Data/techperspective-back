@@ -35,7 +35,7 @@ app.post("/survey", postSurveyResults);
 app.delete("/survey/:id", deleteSurveyResults);
 app.get("/user", getUser);
 app.get("/jotform", getJotForm);
-app.post("/jotform", cloneJotForm);
+app.post("/jotform/:name", cloneJotForm);
 app.get("/active", getActiveSurvey);
 app.get("/results/:id", getJotformResults);
 
