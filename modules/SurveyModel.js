@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const surveySchema = new Schema({
+  surveyName: String,
   surveyID: String,
   createdOn: String,
   submissionCount: Number,
