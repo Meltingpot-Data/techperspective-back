@@ -16,6 +16,7 @@ const getUser = require('./modules/getUser');
 const getJotForm = require('./modules/getJotForm');
 const cloneJotForm = require('./modules/cloneJotForm');
 const getActiveSurvey = require('./modules/getActiveSurvey');
+const getJotformResults = require('./modules/getJotformResults');
 
 const PORT = process.env.PORT || 3001;
 
@@ -34,7 +35,8 @@ app.post("/survey", postSurveyResults);
 app.delete("/survey/:id", deleteSurveyResults);
 app.get("/user", getUser);
 app.get("/jotform", getJotForm);
-app.post("/jotform", cloneJotForm);
-app.get('/active', getActiveSurvey);
+app.post("/jotform/:name", cloneJotForm);
+app.get("/active", getActiveSurvey);
+app.get("/results/:id", getJotformResults);
 
 app.listen(PORT, () => console.log("server is listening to port ", PORT));
